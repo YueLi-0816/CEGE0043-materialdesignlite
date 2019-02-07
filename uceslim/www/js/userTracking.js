@@ -31,7 +31,10 @@ var lat = 51.524616;
 var lng = -0.13818;
 // return the distance in kilometers
 var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat,lng, 'K');
-document.getElementById('showDistance').innerHTML = "Distance: " + distance;
+//check whether the distance is within 0.1km
+if (distance < 0.1) {
+	alert('The distance is within 100m!')
+}
 }
 
 // code adapted from https://www.htmlgoodies.com/beyond/javascript/calculate-the-distance-between-two-points-inyour-web-apps.html
