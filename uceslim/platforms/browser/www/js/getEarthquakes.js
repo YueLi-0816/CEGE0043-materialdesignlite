@@ -1,7 +1,7 @@
 // create a variable that will hold the XMLHttpRequest() - this must be done outside a function so that all the functions can use the same variable
 var client;
 // and a variable that will hold the layer itself – we need to do this outside the function so that we can use it to remove the layer later on
-var earthquakelayer;
+var earthquakes;
 // create the code to get the Earthquakes data using an XMLHttpRequest
 function getEarthquakes() {
 client = new XMLHttpRequest();
@@ -25,6 +25,8 @@ var earthquakelayer;
 function loadEarthquakelayer(earthquakedata) {
 // convert the text received from server to JSON
 var earthquakejson = JSON.parse(earthquakedata);
+
+earthquakes = earthquakejson;
 
 // load the geoJSON layer using custom icon
 earthquakelayer = L.geoJson(earthquakejson,
