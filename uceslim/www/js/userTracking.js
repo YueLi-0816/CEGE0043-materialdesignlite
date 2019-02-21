@@ -23,7 +23,7 @@ mymap.setView([position.coords.latitude, position.coords.longitude], 13)}
 function getDistance() {
 alert('getting distance');
 // getDistanceFromPoint is the function called once the distance has been found
-//navigator.geolocation.getCurrentPosition(getDistanceFromPoint);
+navigator.geolocation.getCurrentPosition(getDistanceFromPoint);
 // getDistanceFromMultiplePoints is the function called once the distance has been found
 navigator.geolocation.getCurrentPosition(getDistanceFromMultiplePoints);
 }
@@ -36,8 +36,8 @@ var lng = -0.13818;
 // return the distance in kilometers
 var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat,lng, 'K');
 //check whether the distance is within 0.1km
-if (distance < 0.1) {
-	alert('The distance is within 100m!')
+if (distance < 1) {
+	alert('The distance is within 1000m!')
 }
 }
 

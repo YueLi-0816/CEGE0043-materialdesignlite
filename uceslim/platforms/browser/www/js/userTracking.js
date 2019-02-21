@@ -24,6 +24,8 @@ function getDistance() {
 alert('getting distance');
 // getDistanceFromPoint is the function called once the distance has been found
 navigator.geolocation.getCurrentPosition(getDistanceFromPoint);
+// getDistanceFromMultiplePoints is the function called once the distance has been found
+navigator.geolocation.getCurrentPosition(getDistanceFromMultiplePoints);
 }
 
 function getDistanceFromPoint(position) {
@@ -34,10 +36,29 @@ var lng = -0.13818;
 // return the distance in kilometers
 var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat,lng, 'K');
 //check whether the distance is within 0.1km
-if (distance < 0.1) {
-	alert('The distance is within 100m!')
+if (distance < 1) {
+	alert('The distance is within 1000m!')
 }
 }
+
+
+// check the distance of the user from each Earthquake in the data
+function getDistanceFromMultiplePoints(position) {
+var minDistance = 100000000000;
+var closestQuake = "";
+for(var i = 0; i < earthquakes.features.length; i++) {
+var obj = earthquakes.features[i];
+var distance = calculateDistance(position.coords.latitude,position.coords.longitude,obj.geometry.coordinates[0], obj.geometry.coordinates[1], 'K');
+if (distance < minDistance){
+minDistance = distance;
+closestQuake = obj.properties.place;
+}
+}
+alert("Earthquake: " + closestQuake + " is distance " + minDistance + "away");
+}
+
+
+
 
 // code adapted from https://www.htmlgoodies.com/beyond/javascript/calculate-the-distance-between-two-points-inyour-web-apps.html
 function calculateDistance(lat1, lon1, lat2, lon2, unit) {
