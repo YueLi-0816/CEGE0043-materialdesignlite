@@ -127,7 +127,8 @@ crossorigin=""></script>
           </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+          <a class="mdl-navigation__link" href="" onclick="callDivNodeJSChange();return
+          false;"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Change Div Content</a>
           <a class="mdl-navigation__link" href="" onclick="getPort();return false"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Get port number</a>
           <a class="mdl-navigation__link" href="" onclick='addPointLinePoly();return false'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Add geometric figures</a>
           <a class="mdl-navigation__link" href="" onclick='getEarthquakes();return false'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Get Earthquakes</a>
@@ -150,6 +151,7 @@ crossorigin=""></script>
 
       <main class="mdl-layout__content mdl-color--grey-100">
         <div id="mapid" style="width: 600px; height: 400px;"></div>
+        <div id="ajaxtest" style="width: 1600px; height: 20px;"></div>
       </main>
 
     </div>
