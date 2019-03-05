@@ -1,15 +1,17 @@
 function trackAndCircle() {
 	trackLocation();
-	addPointLinePoly();
-	getEarthquakes();
-	getPort();
+	//addPointLinePoly();
+	//getEarthquakes();
+	//getFormData();
+	
 	loadW3HTML();
 }
 
 function startup() {
-document.addEventListener('DOMContentLoaded', function() {
-trackAndCircle ();
-}, false);
+	document.addEventListener('DOMContentLoaded', function() {
+		//trackAndCircle ();
+		getPort();
+	}, false);
 }
 
 function loadW3HTML() {
