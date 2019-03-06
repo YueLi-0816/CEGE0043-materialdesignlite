@@ -10,6 +10,8 @@ client.open('GET', url, true);
 client.onreadystatechange = formdataResponse; // note don't use earthquakeResponse() with brackets as that doesn't work
 client.send();
 }
+
+
 // create the code to wait for the response from the data server, and process the response once it is received
 function formdataResponse() {
 // this function listens out for the server to say that the data is ready - i.e. has state 4

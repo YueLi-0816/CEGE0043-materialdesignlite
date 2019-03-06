@@ -3,14 +3,16 @@ function trackAndCircle() {
 	//addPointLinePoly();
 	//getEarthquakes();
 	//getFormData();
-	
+	//getFormData2();
+	//getFormData3();
+	getPort();
 	loadW3HTML();
 }
 
 function startup() {
 	document.addEventListener('DOMContentLoaded', function() {
-		//trackAndCircle ();
-		getPort();
+		trackAndCircle ();
+		
 	}, false);
 }
 
