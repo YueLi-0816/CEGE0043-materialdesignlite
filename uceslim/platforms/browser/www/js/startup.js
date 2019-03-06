@@ -1,5 +1,5 @@
 function trackAndCircle() {
-	trackLocation();
+	//trackLocation();
 	//addPointLinePoly();
 	//getEarthquakes();
 	//getFormData();
